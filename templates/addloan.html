@@ -1,0 +1,52 @@
+<!--
+    Name- Simranpreet Kaur
+    ID- 1153909
+-->
+
+<!-- extends staff1 html page-->
+{% extends "staff1.html" %}
+{% block content %}
+<!-- borrowers is the variable passed in listing borrowers -->
+<!-- books is the variable passed in listing available books -->
+<!-- loandate is the variable passed in containing the current date -->
+<!-- name for the borrower dropdown borrower should be  borrower -->
+<!-- name for the book dropdown should be book-->
+<!-- name for the hidden field with date should be loandate -->
+<!-- URL for submission (action) of form should be loan/add -->
+<h2 style="text-align:center;">Add a new book loan</h2> <!--heading for the form-->
+<br>
+<section>
+    <form action="/loan/add" method="POST"> <!--post method used for getting data-->
+
+        <!--Dropdown for Bookcopy ID-->
+        <label>Books</label>
+        <select name="book" id="bookcopyid">
+            {% for book in books %} <!--accessing id's from books by using for loop-->
+            <option>{{book[0]}}</option>
+            {% endfor %}
+        </select>
+
+        <!--Dropdown for Borrowerid-->
+        <label>Borrowers</label>
+        <select name="borrower" id="borrowerid">
+            {% for borrower in borrowers %} <!--accessing id's from borrowers by using for loop-->
+            <option>{{borrower[0]}}</option>
+            {% endfor %}
+        </select>
+
+
+
+
+        <!--Hidden input field for current date-->
+        <input type="hidden" id="loandate" name="loandate" value="{{ loandate }}">
+
+
+
+        <input type="submit">
+
+    </form>
+</section>
+
+
+
+{% endblock %}

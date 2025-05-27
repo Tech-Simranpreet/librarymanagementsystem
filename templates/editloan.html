@@ -1,0 +1,46 @@
+<!--
+    Name- Simranpreet Kaur
+    ID- 1153909
+-->
+
+<!-- extends staff1 html page-->
+{% extends "staff1.html" %}
+{% block content %}
+
+<!--container begins-->
+<div class="container" style="width: 40%">
+    <!--form for updating loan status-->
+    <form method="post" action="/updatebookstatus">
+
+        <p>
+            <!--hidden loanid-->
+            <input name="id" value="{{ loanlist[0] }}" type="hidden">
+        </p>
+
+
+        <div class="mb-3">
+            <p class="text-center">
+                <select class="form-select form-select-lg mb-3" id="returned" name="returned" value="{{ loanlist[5]}}"
+                    required>
+                    <option value=0>On Loan</option>
+                    <option value=1>Returned</option>
+                </select>
+            </p>
+        </div>
+
+
+        <div class="mb-3">
+            <p class="text-center">
+
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="text-center">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </p>
+        </div>
+    </form>
+</div>
+<!--container ends-->
+{% endblock %}

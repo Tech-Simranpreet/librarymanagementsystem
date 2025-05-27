@@ -1,0 +1,36 @@
+<!--
+    Name- Simranpreet Kaur
+    ID- 1153909
+-->
+
+<!-- extends staff1 html page-->
+{% extends "staff1.html" %}
+{% block content %}
+<!--heading for the table-->
+<h2 style="text-align: center;">Borrower Summary</h2>
+<br>
+<!--container begins-->
+<div class="container">
+    <table class="table table-striped table-hover align-center ">
+        <thead class="table-success">
+            <tr>
+                <!--hidden borrowerid-->
+                <th hidden>Borrower ID</th>
+                <th>First Name</th>
+                <th>Family Name</th>
+                <th>Date Of Birth</th>
+                <th>Number of loans</th>
+            </tr>
+        </thead>
+        {% for borrower in borrowers %}
+        <tr>
+            <td>{{ borrower[1] }}</td>
+            <td>{{ borrower[2] }}</td>
+            <td>{{ borrower[3] }}</td>
+            <td>{{ borrower[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<!--container ends-->
+{% endblock %}

@@ -1,0 +1,94 @@
+<!--
+    Name- Simranpreet Kaur
+    ID- 1153909
+-->
+    
+<!-- extends staff1 html page--> 
+{% extends "staff1.html" %}
+{% block content %}
+<!-- code in here to display a list of loans -->
+<!-- loanlist is the variable passed in containing list of loans -->
+{% if loanlist %}
+<!--heading for loan list-->
+<h2 style="text-align:center;"> Books on Loan</h2>
+<br>
+<!--container ends-->
+<div class="container">
+    <table class="table table-striped table-hover">
+        <thead class="table-success">
+            <tr> <!--getting column headers-->
+                <th>Borrower ID</th>
+                <th>Family Name</th>
+                <th>First Name</th>
+                <th>Book Copy ID</th>
+                <th>Loan Date</th>
+                <th>Book Status</th>
+                <th>Book Format</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <!--defining global variable with namespace -->
+        {% set currentloan = namespace (name=0) %}
+        {% for loan in loanlist %} <!--accessing table contents-->
+
+        <!--using nested if statements to pass color for the type of format-->
+        {% if loan[12]== "eBook" %}
+        {% set col="green" %}
+        {% elif loan[12]== "Paperback" %}
+        {% set col= "white" %}
+        {% elif loan[12]== "Audio Book" %}
+        {% set col= "yellow" %}
+        {% elif loan[12]== "Hardcover" %}
+        {% set col= "white" %}
+        {% else %}
+        {% set col= "red"%}
+        {% endif %}
+
+
+        <!--using if statement for returning book loan status and setting variable var which is displayed as other row-->
+        {% if loan[6]== 1 %}
+        {% set var = "returned" %}
+        {% else %}
+        {% set var = "on loan" %}
+        {% endif %}
+
+
+        <!--printing color by passing-->
+        <tr bgcolor={{col}}>
+            <!--if statement to get familyname and firstname of the borrower only once if the book is borrowed more than once-->
+            <!--accessing currentloan variable-->
+
+            <td>{{ loan[0] }}</td>
+            {% if currentloan.familyname != loan[2] %}
+            <td>{{ loan[2] }}</td>
+            {% set currentloan.familyname = loan[2] %}
+            {% else %}
+            <td></td>
+            {% endif %}
+
+            {% if currentloan.firstname != loan[1] %}
+            <td>{{ loan[1] }}</td>
+            {% set currentloan.firstname = loan[1] %}
+            {% else %}
+            <td></td>
+            {% endif %}
+
+            <td>{{loan[4]}}</td>
+            <td>{{loan[5]}}</td>
+            <td>{{var}}</td> <!--printing var variable to get the book loan status-->
+            <td>{{loan[12]}}</td>
+            <td><a href="/editloan/{{loan[4]}}" class="btn btn-primary">Edit</button></td>
+
+
+
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+<!--container ends-->
+{% endif %}
+
+
+{% endblock %}

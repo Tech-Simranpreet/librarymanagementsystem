@@ -1,0 +1,52 @@
+<!--
+    Name- Simranpreet Kaur
+    ID- 1153909
+-->
+
+<!-- extends staff1 html page-->
+{% extends "staff1.html" %}
+{% block content %}
+
+<h2 style="text-align:center;">Issue a Book</h2> <!--heading for the form-->
+<br>
+<!--container begins-->
+<div class="container" style="width:50%">
+    <form action="/bookissued" method="POST"> <!--post method used for getting data-->
+        <div class="mb-3">
+            <!--Dropdown for Bookcopy ID-->
+            <label>Bookcopy</label><br>
+            <select name="book" id="bookcopyid">
+                <option value="disabled selected">Select Bookcopyid</option>
+                {% for book in books %} <!--accessing id's from books by using for loop-->
+                <option>{{book[0]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+        <div class="mb-3">
+            <!--Dropdown for Borrowerid-->
+            <label>Borrowers</label><br>
+            <select name="borrower" id="borrowerid" required>
+                <option value="disabled selected">Select borrowerid</option>
+                {% for borrower in borrowers %} <!--accessing id's from borrowers by using for loop-->
+                <option>{{borrower[0]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
+
+        <!--Hidden input field for current date-->
+        <input type="hidden" id="loandate" name="loandate" value="{{ loandate }}">
+
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+
+    </form>
+</div>
+
+<!--container ends-->
+
+
+{% endblock %}

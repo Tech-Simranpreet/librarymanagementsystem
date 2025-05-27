@@ -1,0 +1,35 @@
+<!--
+    Name- Simranpreet Kaur
+    ID- 1153909
+-->
+
+<!-- extends staff1 html page-->
+{% extends "staff1.html" %}
+{% block content %}
+<!--heading for the search form-->
+<h2 style="text-align: center;">Search the borrower</h2>
+<!--container begins-->
+<div class="container" style="width:40%">
+    <form action="/borrowerdetails" method="POST">
+        <div class="mb-3">
+            <label for="Search">Search</label> 
+            <!--dropdown for search by name or id-->
+            <select class="form-select form-select-lg mb-3" id="search" name="Search" required>
+                <option value="">Search</option>
+                <option value="BorrowerName">Borrower Name</option>
+                <option value="BorrowerID">Borrower ID</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="Enterkeyword">Enter the keyword</label>
+            <!--input field for entering the required field-->
+            <input type="text" class="form-control" id="enterkeyword" name="value" required>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+
+    </form>
+</div>
+<!--container ends-->
+{% endblock %}

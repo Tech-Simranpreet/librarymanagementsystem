@@ -1,0 +1,63 @@
+<!--
+    Name- Simranpreet Kaur
+    ID- 1153909
+-->
+
+<!-- extends staff1 html page-->
+{% extends "staff1.html" %}
+{% block content %}
+
+
+<h2 style="text-align:center">Add Details</h2> <!--heading for the form-->
+<br>
+<!--container-->
+<div class="container" style="width: 40%;">
+    <form action="/staff/addborrower" method="POST"> <!--post method used for getting data-->
+
+
+        <div class="mb-3">
+            <label for="firstname">First Name</label>
+            <input type="text" placeholder="First Name" class="form-control" name="firstname" id="firstname" required
+                value="" /><br>
+        </div>
+        <div class="mb-3">
+            <label for="familyname">Family Name</label>
+            <input type="text" placeholder="Family Name" class="form-control" name="familyname" id="familyname" required
+                value="" /><br>
+        </div>
+        <div class="mb-3">
+            <label for="dateofbirth">Date of Birth</label>
+            <input type="date" placeholder="Date Of Birth" class="form-control" name="dateofbirth" id="dob" required
+                value="" /><br>
+        </div>
+        <div class="mb-3">
+            <label for="housenumbername">House Number Name</label>
+            <input type="text" placeholder="House Number Name" class="form-control" name="housenumbername" id="house"
+                value="" /><br>
+        </div>
+        <div class="mb-3">
+            <label for="street">Street</label>
+            <input type="text" placeholder="Street" class="form-control" name="street" id="street" value="" /><br>
+        </div>
+        <div class="mb-3">
+            <label for="Town">Town</label>
+            <input type="town" placeholder="Town" class="form-control" name="town" id="town" value="" /><br>
+        </div>
+        <div class="mb-3">
+            <label for="city">City</label>
+            <input type="text" placeholder="City" class="form-control" name="city" id="city" value="" /><br>
+        </div>
+        <div class="mb-3">
+            <label for="postalcode">Postal Code</label>
+            <input type="text" placeholder="Postal Code" class="form-control" name="postalcode" id="pcode"
+                value="" /><br>
+        </div>
+
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+</div> <!--container ends-->
+{% endblock %}

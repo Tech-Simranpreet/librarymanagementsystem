@@ -1,0 +1,82 @@
+<!--
+    Name- Simranpreet Kaur
+    ID- 1153909
+-->
+
+<!-- extends staff1 html page-->
+{% extends "staff1.html" %}
+{% block content %}
+<!--container begins-->
+<div class="container" style="width: 40%">
+    <!--form for editing the borrower details-->
+    <form method="post" action="/updateborrower">
+
+        <p>
+            <!--hidden borrowerid-->
+            <input name="id" value="{{ borrowerlist[0] }}" type="hidden">
+        </p>
+        <div class="mb-3">
+            <p class="text-center">
+                <input name="firstname" class="form-control" value="{{ borrowerlist[1] }}" type="text"
+                    placeholder="Name" autocomplete="off" required>
+            </p>
+
+        </div>
+        <div class="mb-3">
+            <p class="text-center">
+                <input name="familyname" class="form-control" value="{{ borrowerlist[2] }}" type="text"
+                    placeholder="Name" autocomplete="off" required>
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="text-center">
+                <input name="dateofbirth" class="form-control" value="{{ borrowerlist[3] }}" type="date"
+                    placeholder="Date Of Birth" autocomplete="off" required>
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="text-center">
+                <input name="housenumbername" class="form-control" value="{{ borrowerlist[4] }}" type="text"
+                    placeholder="House Number Name" autocomplete="off" required>
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="text-center">
+                <input name="street" class="form-control" value="{{ borrowerlist[5] }}" type="text" placeholder="Street"
+                    autocomplete="off" required>
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="text-center">
+                <input name="town" class="form-control" value="{{ borrowerlist[6] }}" type="text" placeholder="Town"
+                    autocomplete="off" required>
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="text-center">
+                <input name="city" class="form-control" value="{{ borrowerlist[7] }}" type="text" placeholder="City"
+                    autocomplete="off" required>
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="text-center">
+                <input name="postalcode" class="form-control" value="{{ borrowerlist[8] }}" type="text"
+                    placeholder="Postal Code" autocomplete="off" required>
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="text-center">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </p>
+        </div>
+    </form>
+</div>
+<!--container ends-->
+{% endblock %}

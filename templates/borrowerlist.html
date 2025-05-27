@@ -1,0 +1,51 @@
+<!--
+    Name- Simranpreet Kaur
+    ID- 1153909
+-->
+
+<!-- extends staff1 html page-->
+{% extends "staff1.html" %}
+{% block content %}
+<!-- code in here to display a list of borrowers -->
+<!-- borrowerlist is the variable passed in containing list of loans -->
+<h2 style="text-align: center;">Borrowers</h2>
+<!--table formatted to striped rows-->
+<table class="table table-striped table-hover align-center">
+
+    <thead class="table-success">
+        <!--getting required column headers for rows-->
+        <tr>
+            <th hidden>Borrower ID</th>
+            <th>First Name</th>
+            <th>Family Name</th>
+            <th>Date of Birth</th>
+            <th>House Number Name</th>
+            <th>Street</th>
+            <th>Town</th>
+            <th>City</th>
+            <th>Postal Code</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    {% for borrower in borrowerlist%} <!--for loop for getting data from table-->
+    <tr>
+        <!--required columns to display the table content-->
+        <td>{{borrower[1]}}</td>
+        <td>{{borrower[2]}}</td>
+        <td>{{borrower[3]}}</td>
+        <td>{{borrower[4]}}</td>
+        <td>{{borrower[5]}}</td>
+        <td>{{borrower[6]}}</td>
+        <td>{{borrower[7]}}</td>
+        <td>{{borrower[8]}}</td>
+        <!-- reference to edit the borrower-->
+        <td><a href="/editborrower/{{borrower[0]}}" class="btn btn-default pull-right">EDIT</a></td>
+
+    </tr>
+
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
