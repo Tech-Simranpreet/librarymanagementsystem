@@ -1,6 +1,6 @@
 Web Application Project
 
-Waikirikiri Library web application project is specially designed for the ‘Public’ (that is Readers who get books issued) and ‘Staff Members‘ of the Library who has the acess of performing actions on the borrowers(search, updation of the details, add borrowers, issue and return books and generate reports for the loans issued). This project is a live web app on PythonAnywhere which is further connected to Github for data updation.
+Waikirikiri Library web application project is specially designed for the ‘Public’ (that is Readers who get books issued) and ‘Staff Members‘ of the Library who has the access of performing actions on the borrowers(search, updation of the details, add borrowers, issue and return books and generate reports for the loans issued). This project is a live web app on PythonAnywhere which is further connected to Github for data updation.
 
 We have been given the web app project in which we had to make two interfaces
 
