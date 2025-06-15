@@ -124,6 +124,12 @@
         color: black;
       }
 
+      .btn-outline-light:hover{
+        background-color: #ffc107;
+        color: black;
+        border-color: #ffc107;
+      }
+
       /* Hero section */
       section.hero {
             background-image: url("{{ url_for('static', filename='images/town-square.jpg') }}"); 
@@ -224,9 +230,14 @@
         <p class="lead">
           Search and manage your favourite books with ease and simplicity.
         </p>
-        <a href="/booksearches" class="btn btn-custom btn-lg mt-3">
-          Search Book
-        </a>
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+          <a href="/booksearches" class="btn btn-custom btn-lg mt-3">
+            I'm a Customer!
+          </a>
+          <a href="/staff" class="btn btn-custom btn-lg mt-3">
+            I'm a Staff Member!
+          </a>
+        </div>
       </div>
     </section>
     {%endif%}
