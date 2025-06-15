@@ -38,5 +38,23 @@
     </div>
   </form>
 </div>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link fs-5" href="/booksearches">Search Book</a>
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link fs-5 {% if request.path == '/listbooks'%}active{%endif%}"
+          href="/listbooks"
+          >List Books</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
 <!--container ends-->
 {% endblock %}
