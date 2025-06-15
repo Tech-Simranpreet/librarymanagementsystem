@@ -111,7 +111,7 @@
         background-color: white;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
-        display: none;
+        
       }
       .btn-custom {
         background-color: #343a40;
@@ -196,7 +196,7 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a
-                class="nav-link fs-5{% if request.path == '/booksearches'%}active{%endif%}"
+                class="nav-link fs-5"
                 href="/booksearches"
                 >Search Book</a
               >
@@ -217,6 +217,7 @@
     <!--nav bar ends-->
 
     <!-- Hero section -->
+    {% if request.path == '/' %}
     <section class="hero">
       <div class="container">
         <h1 class="display-5 fw-bold">Welcome to Waikirikiri Library</h1>
@@ -228,7 +229,8 @@
         </a>
       </div>
     </section>
-
+    {%endif%}
+    
     {% if request.path != '/' %}
     <section class="content">
       <header>{% block header %}{% endblock %}</header>
@@ -237,6 +239,7 @@
       {% endfor %} {% block content %}{% endblock %}
     </section>
     {%endif%}
+    
 
     <footer class="footer">
       <div class="container">

@@ -254,7 +254,7 @@ def currentloans():
 # booklist1.html template is rendered
 
 
-@app.route("/booksearches", methods=["POST"])
+@app.route("/booksearches", methods=["GET", "POST"])
 def booksearches():
     title = request.form["title"]
     author = request.form["author"]

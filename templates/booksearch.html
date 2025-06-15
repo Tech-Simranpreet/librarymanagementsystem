@@ -4,31 +4,39 @@
 -->
 
 <!-- extends base html page-->
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <!--heading for the search form-->
-<h2 style="text-align:center">Search the Book</h2>
-<br>
+<h2 style="text-align: center">Search the Book</h2>
+<br />
 <!--container begins-->
-<div class="container" style="width:30%">
-    <form action="/booksearches" method="POST">
-        <div class="mb-3">
-            <label for="booktitle">Book Title</label>
-            <input type="text" class="form-control" name="title" placeholder="Book Title" required>
-        </div>
+<div class="container" style="width: 30%">
+  <form action="/booksearches" method="POST">
+    <div class="mb-3">
+      <label for="booktitle">Book Title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        placeholder="Book Title"
+        required
+      />
+    </div>
 
+    <div class="mb-3">
+      <label for="author">Book Author</label>
+      <input
+        type="text"
+        class="form-control"
+        name="author"
+        placeholder="Book Author"
+      />
+    </div>
 
-        <div class="mb-3">
-            <label for="author">Book Author</label>
-            <input type="text" class="form-control" name="author" placeholder="Book Author">
-        </div>
-
-
-        <div class="d-grid gap-2 d-md-block">
-            <button class="btn btn-success" type="submit">Search</button>
-            <button class="btn btn-secondary" type="reset">Reset</button>
-        </div>
-    </form>
+    <div class="d-grid gap-2 d-md-block">
+      <button class="btn btn-success" type="submit">Search</button>
+      <button class="btn btn-secondary" type="reset">Reset</button>
+    </div>
+  </form>
 </div>
 <!--container ends-->
 {% endblock %}
