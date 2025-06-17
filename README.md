@@ -1,4 +1,4 @@
-Web Application Project
+## Web Application Project
 
 Waikirikiri Library web application project is specially designed for the ‘Public’ (that is Readers who get books issued) and ‘Staff Members‘ of the Library who has the access of performing actions on the borrowers(search, updation of the details, add borrowers, issue and return books and generate reports for the loans issued). This project is a live web app on PythonAnywhere which is further connected to Github for data updation.
 
@@ -7,6 +7,9 @@ We have been given the web app project in which we had to make two interfaces
 Public- This interface is mainly for the borrowers who can search the books available and see the list of books with the availability and due date. The requirement of the project is to access this route by “/“.
 Staff- This interface is maily for the staff of the library to perform actions and the requirement of the project to access this route is “/staff“.
 I used Python, Flask, Mysql and Jinja+css codes to build the interface and apply routes within the interfaces and get the operations done for the given requirement.
+
+## Staff Login - 
+* Password - Staff123
 
 # Outline of the routes and functions:
 
