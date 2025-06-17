@@ -255,7 +255,11 @@
           <a href="/booksearches" class="btn btn-custom btn-lg mt-3">
             I'm a Customer!
           </a>
-          <a href="/staff" class="btn btn-custom btn-lg mt-3">
+          <a
+            href="/staff"
+            class="btn btn-custom btn-lg mt-3"
+            onclick="return checkPassword();"
+          >
             I'm a Staff Member!
           </a>
         </div>
@@ -281,5 +285,17 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      function checkPassword() {
+        const pwd = prompt('Please enter the staff password:');
+        if (pwd == 'Staff123') {
+          return true;
+        } else {
+          alert(' Incorrect password. Access denied.');
+          return false;
+        }
+      }
+    </script>
   </body>
 </html>
