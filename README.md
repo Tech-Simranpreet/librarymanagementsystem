@@ -4,14 +4,16 @@ Waikirikiri Library web application project is specially designed for the ‘Pub
 
 We have been given the web app project in which we had to make two interfaces
 
-Public- This interface is mainly for the borrowers who can search the books available and see the list of books with the availability and due date. The requirement of the project is to access this route by “/“.
-Staff- This interface is maily for the staff of the library to perform actions and the requirement of the project to access this route is “/staff“.
+## Public- 
+This interface is mainly for the borrowers who can search the books available and see the list of books with the availability and due date. The requirement of the project is to access this route by “/“.
+## Staff- 
+This interface is maily for the staff of the library to perform actions and the requirement of the project to access this route is “/staff“.
 I used Python, Flask, Mysql and Jinja+css codes to build the interface and apply routes within the interfaces and get the operations done for the given requirement.
 
 ## Staff Login - 
 * Password - Staff123
 
-# Outline of the routes and functions:
+## Outline of the routes and functions:
 
 For Flask web app, there is requirement of ‘App.py’ file which is a python flask file, used to make interfaces and programming is performed with the help of mysql queries. Along with this, templates (HTML, Jinjs, CSS) are required for the validation purposes, fetching data for website, coding of it. ‘Connect.py’ is a connection file which links the database tp the flask app to perform actions the database of the library. For this, certain number of routes and functions are required to build so that users would be able to perform actions and navigate through the website.
 
