@@ -470,7 +470,7 @@ def bookreturn():
 def overduebooks():
     # sql query is passed to the connection.execute
     connection = getCursor()
-    sql = """SELECT books.bookid, books.booktitle, borrowers.borrowerid, borrowers.fullname, bookcopies.format, DATEDIFF(NOW(), loans.loandate) AS daysoverdue from books
+    sql = """SELECT books.bookid, books.booktitle, borrowers.borrowerid, CONCAT(borrowers.firstname, ' ', borrowers.familyname) AS fullname, bookcopies.format, DATEDIFF(NOW(), loans.loandate) AS daysoverdue from books
 
                 INNER JOIN 
 
